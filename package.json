@@ -1,6 +1,6 @@
 {
-  "name": "electron-react-boilerplate",
-  "productName": "ElectronReact",
+  "name": "electron-react-boilerplate-tester",
+  "productName": "electron-react-boilerplate-tester",
   "version": "1.3.1",
   "description": "Electron application boilerplate based on React, React Router, Webpack, React Hot Loader for rapid application development",
   "scripts": {
@@ -52,8 +52,8 @@
     ]
   },
   "build": {
-    "productName": "ElectronReact",
-    "appId": "org.develar.ElectronReact",
+    "productName": "electron-react-boilerplate-tester",
+    "appId": "org.develar.electron-react-boilerplate-tester",
     "files": [
       "dist/",
       "node_modules/",
@@ -77,10 +77,20 @@
       ]
     },
     "win": {
+      "icon": "/resources/myIcon.ico",
       "target": [
         "nsis",
         "msi"
       ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowElevation": true,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": false,
+      "include": "build/installer.nsh",
+      "deleteAppDataOnUninstall": true
     },
     "linux": {
       "target": [
