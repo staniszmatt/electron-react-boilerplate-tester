@@ -5,7 +5,7 @@ import { Switch, Route } from 'react-router-dom';
 import routes from './constants/routes.json';
 import App from './containers/App';
 import HomePage from './containers/HomePage';
-import NaveBar from './components/NaveBar';
+import Navbar from './components/Navbar';
 
 // Information on React.lazy setup: https://reactjs.org/docs/code-splitting.html
 // Lazily load routes and code split with webpack
@@ -32,7 +32,7 @@ const FormTypesPage = (props: Record<string, any>) => (
 export default function Routes() {
   return (
     <App>
-      <NaveBar />
+      <Navbar />
       <Switch>
         <Route path={routes.FORMTYPES} component={FormTypesPage} />
         <Route path={routes.COUNTER} component={CounterPage} />

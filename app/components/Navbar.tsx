@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import routes from '../constants/routes.json';
-import styles from './NaveBar.css';
+import styles from './Navbar.css';
 
 export default function Nav() {
   return (
