@@ -20,7 +20,7 @@ const assertNoConsoleErrors = async (t) => {
 fixture`Home Page`.page('../../app/app.html').afterEach(assertNoConsoleErrors);
 
 test('e2e', async (t) => {
-  await t.expect(getPageTitle()).eql('Hello Electron React!');
+  await t.expect(getPageTitle()).eql('Hello Electron Test!');
 });
 
 test('should open window and contain expected page title', async (t) => {
@@ -49,7 +49,7 @@ test('should display updated count after the increment button click', async (t) 
   await t.click(incrementButton).expect(getCounterText()).eql('1');
 });
 
-test('should display updated count after the descrement button click', async (t) => {
+test('should display updated count after the decrement button click', async (t) => {
   await t.click(decrementButton).expect(getCounterText()).eql('-1');
 });
 
