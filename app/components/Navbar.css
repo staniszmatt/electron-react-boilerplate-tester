@@ -1,4 +1,4 @@
-.naveContainer {
+.navbarContainer {
   width: 100%;
   height: 30px;
   text-align: center;
@@ -16,6 +16,6 @@
   border: 0.8px solid black;
 }
 
-.naveContainer > a {
+.navbarContainer > a {
   margin: auto;
 }

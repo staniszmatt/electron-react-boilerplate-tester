@@ -5,7 +5,7 @@ import styles from './Navbar.css';
 
 export default function Nav() {
   return (
-    <div className={styles.naveContainer}>
+    <div className={styles.navbarContainer}>
       <Link to={routes.HOME}>
         <button type="button">Home</button>
       </Link>
