@@ -36,7 +36,6 @@ li {
 
 a {
   color: white;
-  opacity: 0.75;
   text-decoration: none;
 }
 
@@ -44,4 +43,29 @@ a:hover {
   opacity: 1;
   text-decoration: none;
   cursor: pointer;
+}
+
+button {
+  font-family: Arial, Helvetica, Helvetica Neue, serif;
+  font-weight: bold;
+  border-radius: 3px;
+  filter: drop-shadow(2.5px 3.5px 1.5px black);
+  background-color: white;
+  outline: none;
+}
+
+button:hover {
+  cursor: pointer;
+  background-color: #cdcfd1;
+  transform: scale(1.02);
+  border-radius: 3px;
+  font-weight: bold;
+}
+
+button:active {
+  cursor: pointer;
+  transform: scale(1);
+  outline: 1px black;
+  border-radius: 3px;
+  font-weight: bold;
 }
