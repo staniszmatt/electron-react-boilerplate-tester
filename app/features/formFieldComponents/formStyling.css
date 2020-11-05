@@ -1,0 +1,30 @@
+.textarea-container {
+  width: 100%;
+}
+
+.textarea-container > div {
+  margin: 5px;
+}
+
+.textarea-container > div:first-child {
+  text-align: center;
+  font-size: 12pt;
+  font-weight: bold;
+  white-space: pre-wrap;
+  margin: 10px 0;
+}
+
+.textarea-container > div:nth-child(2) > textarea {
+  width: 98%;
+  vertical-align: top;
+  resize: none;
+  max-height: 120px;
+  box-shadow: inset 0 0 5px #000154;
+  padding: 5px;
+}
+
+.textarea-container > p {
+  margin: unset;
+  font-size: 16px;
+  color: red;
+}
