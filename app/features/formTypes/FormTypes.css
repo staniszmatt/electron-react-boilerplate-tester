@@ -1,6 +1,7 @@
 .formTypesContainer {
   height: 100vh;
-  display: flex;
+  display: block;
+  padding-top: 40px;
 }
 
 .formTypesContainer > div {

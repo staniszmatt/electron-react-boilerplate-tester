@@ -24,12 +24,23 @@ const FormFieldsForm = (
       onSubmit={handleSubmit(onSubmit)}
       className={styles['form-container']}
     >
-      <div>
+      <div className={styles.fo}>
         <div>
           <Field
-            label="Text Area Form Field:"
+            label="Text Area Field 1:"
             component={FormTextArea}
-            name="textAreaValue"
+            name="textAreaValue1"
+            type="textarea"
+            aria-multiline
+            defaultValue={textAreaValue}
+            rows="10"
+          />
+        </div>
+        <div>
+          <Field
+            label="Text Area Field 2:"
+            component={FormTextArea}
+            name="textAreaValue2"
             type="textarea"
             aria-multiline
             defaultValue={textAreaValue}
