@@ -4,32 +4,52 @@ import FormFieldForm from './FormFieldsForm';
 import styles from './FormTypes.css';
 import { formData, formTypeState } from './formTypesSlice';
 
+// Just a function to return empty if we have an empty string
+function emptyStringCheck(stringToCheck: string) {
+  // NOTE: Order Matters Here! Need to check for null first before we check length
+  return stringToCheck === null || stringToCheck.length === 0
+    ? 'Empty'
+    : stringToCheck;
+}
+
 export default function FormTypes() {
   const dispatch = useDispatch();
   const value = useSelector(formTypeState);
 
   console.log('FormTypes state value: ', value);
-  const stateTextAreaValue = value.textAreaInfo;
 
-  const testFormProps = {
-    textAreaValue: 'testing string',
-  };
+  const textBox1String = emptyStringCheck(value.textAreaData.textAreaValue1);
+  const textBox2String = emptyStringCheck(value.textAreaData.textAreaValue2);
 
   return (
     <div className={styles.formTypesContainer} data-tid="backButton">
-      <div>Form Fields Types Example Page:</div>
-      <div>
-        <FormFieldForm
-          onSubmit={() => {
-            dispatch(formData());
-          }}
-          props={testFormProps}
-        />
+      {/** This is the Form container setup with a header div. */}
+      <div className={styles.formContainer}>
+        <div>Form Field Type Examples:</div>
+        <div>
+          <FormFieldForm
+            onSubmit={() => {
+              dispatch(formData());
+            }}
+            props={value.textAreaData}
+          />
+        </div>
       </div>
+      {/** Here is the state change display of the form fields when it is submitted. */}
       <div>
-        <div>Form State Value</div>
-        <div>{stateTextAreaValue}</div>
+        <div className={styles.formFieldSubmittedText}>
+          <div>Form Value State On Submit:</div>
+          <div>
+            <div>Text Box 1:</div>
+            <div>{textBox1String}</div>
+          </div>
+          <div>
+            <div>Text Box 2:</div>
+            <div>{textBox2String}</div>
+          </div>
+        </div>
       </div>
+      {/** Keeping separated to help differentiate between set containers */}
     </div>
   );
 }

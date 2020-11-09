@@ -1,11 +1,39 @@
 .formTypesContainer {
   height: 100vh;
-  display: block;
-  padding-top: 40px;
+  display: flex;
+  margin-top: 40px;
 }
 
 .formTypesContainer > div {
   margin: auto;
   font-size: 50px;
   font-weight: bold;
+}
+
+.formContainer > div {
+  font-size: 18px;
+}
+
+.formFieldSubmittedText > div {
+  display: flex;
+}
+
+.formFieldSubmittedText > div:first-child {
+  margin-bottom: 10px;
+  text-decoration: underline;
+}
+
+.formFieldSubmittedText > div > div:first-child {
+  padding-right: 20px;
+}
+
+.formContainer > div:last-child > form {
+  margin: auto;
+}
+
+.formFieldSubmittedText {
+  color: white;
+  text-align: center;
+  font-size: 18px;
+  height: 100%;
 }
