@@ -1,6 +1,6 @@
 import React from 'react';
 import { Field, reduxForm, InjectedFormProps } from 'redux-form';
-import FormTextArea from '../formFieldComponents/FormTextArea';
+import FormTextArea from '../../../components/formFieldComponents/TextArea';
 import styles from './FormFieldsForm.css';
 
 // Need to include the interface to fix TypeScript errors here but needed to disable
@@ -14,6 +14,10 @@ interface DispatchProps {
     textAreaValue1: string;
     textAreaValue2: string;
   };
+  initialValues?: {
+    textAreaValue1: string;
+    textAreaValue2: string;
+  };
 }
 
 // TypeScript interface set for formProps to include redux-form TypeScript interface.
@@ -23,8 +27,6 @@ const FormFieldsForm = (
 ) => {
   const { handleSubmit, onSubmit } = formProps;
   const { textAreaValue1, textAreaValue2 } = formProps.props;
-
-  console.log('FormFieldsData textAreaData: ', formProps.props);
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.formContainer}>
@@ -80,14 +82,18 @@ function validate(values: Values) {
   // Just an example of error checking that can be done.
   // These checks check for string length as a character limit, this one limits to 20 char.
   if (textAreaValue1) {
-    if (textAreaValue1.length > 20) {
-      errors.textAreaValue = 'Over max character limit!';
+    if (textAreaValue1.length > 560) {
+      errors.textAreaValue1 = `Over 560 max character limit by ${
+        textAreaValue1.length - 560
+      } characters!`;
     }
   }
   // An example for error checking to limit text box to 10 char.
   if (textAreaValue2) {
-    if (textAreaValue2.length > 10) {
-      errors.textAreaValue = 'Over max character limit!';
+    if (textAreaValue2.length > 700) {
+      errors.textAreaValue2 = `Over 700 max character limit by ${
+        textAreaValue2.length - 700
+      } characters!`;
     }
   }
   // Returns the error if any that then is attached to the <p> element
@@ -100,8 +106,8 @@ export default reduxForm<FormProps, DispatchProps>({
   form: 'formTypes',
   // Call the validate function for error handling for enforcing limits
   validate,
-  // Set Initial values are set to null so we know if we get a null value, no changes were made.
-  // This is also so if we have a default value, like data from a DB(database), we can set to that string in the form function.
+  // Since I want to pass default strings to form fields, we need to call out the initial key values
+  // so we don't fail validation testing after submit is clicked. If no default is required, then key value isn't needed.
   initialValues: {
     textAreaValue1: null,
     textAreaValue2: null,

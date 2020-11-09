@@ -15,8 +15,6 @@ const formTypesSlice = createSlice({
   // Setup reducer state updates, storeTextArea is the example of passed action string
   reducers: {
     storeTextArea: (state, action) => {
-      console.log('Current state', state);
-      console.log('Action type and payload', action);
       // Setup State Changes
       state.textAreaData.textAreaValue1 = action.payload.textAreaValue1;
       state.textAreaData.textAreaValue2 = action.payload.textAreaValue2;
@@ -31,9 +29,6 @@ export const { storeTextArea } = formTypesSlice.actions;
 export const formData = (): AppThunk => {
   return (dispatch, getState) => {
     const state = getState();
-
-    console.log('Current state: ', state);
-
     const textAreaString = state.form.formTypes.values;
 
     dispatch(storeTextArea(textAreaString));

@@ -1,6 +1,6 @@
 import React from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import FormFieldForm from './FormFieldsForm';
+import FormFieldForm from './formFieldsForm/FormFieldsForm';
 import styles from './FormTypes.css';
 import { formData, formTypeState } from './formTypesSlice';
 
@@ -15,9 +15,6 @@ function emptyStringCheck(stringToCheck: string) {
 export default function FormTypes() {
   const dispatch = useDispatch();
   const value = useSelector(formTypeState);
-
-  console.log('FormTypes state value: ', value);
-
   const textBox1String = emptyStringCheck(value.textAreaData.textAreaValue1);
   const textBox2String = emptyStringCheck(value.textAreaData.textAreaValue2);
 
@@ -40,11 +37,11 @@ export default function FormTypes() {
         <div className={styles.formFieldSubmittedText}>
           <div>Form Value State On Submit:</div>
           <div>
-            <div>Text Box 1:</div>
+            <div>Submitted Text Area 1:</div>
             <div>{textBox1String}</div>
           </div>
           <div>
-            <div>Text Box 2:</div>
+            <div>Submitted Text Box 2:</div>
             <div>{textBox2String}</div>
           </div>
         </div>

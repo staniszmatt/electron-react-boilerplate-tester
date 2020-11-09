@@ -3,8 +3,14 @@
   text-align: center;
 }
 
+.formContainer > div {
+  width: 100%;
+}
+
 .formContainer > div > div:last-child {
-  margin: 20px 0;
+  width: 100%;
+  position: fixed;
+  bottom: 50px;
 }
 
 .formContainer > div > div:last-child > div > button {

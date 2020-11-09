@@ -50,7 +50,7 @@ export default function FormTextArea(props: Props) {
   };
 
   return (
-    <div className={styles['textarea-container']}>
+    <div className={styles.textareaContainer}>
       <div>
         <label htmlFor={props.input.name}>{label}</label>
       </div>
