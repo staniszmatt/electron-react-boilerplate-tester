@@ -8,9 +8,7 @@
 }
 
 .formContainer > div > div:last-child {
-  width: 100%;
-  position: fixed;
-  bottom: 50px;
+  margin: 15px 0;
 }
 
 .formContainer > div > div:last-child > div > button {

@@ -70,7 +70,7 @@ export default function FormTextArea(propsTextArea: PropsTextArea) {
        * This is so error tag is only displayed when there is an error.
        * This helped me with better control with styling issues with spacing under text area.
        */}
-      {touched && <p className="red-text darken-2">{error}</p>}
+      {touched && error && <p className="red-text darken-2">{error}</p>}
     </div>
   );
 }

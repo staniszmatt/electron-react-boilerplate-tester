@@ -7,8 +7,8 @@ const formTypesSlice = createSlice({
   name: 'formTypes',
   initialState: {
     textAreaData: {
-      textAreaValue1: '',
-      textAreaValue2: '',
+      textAreaValue1: 'Test Default 1',
+      textAreaValue2: 'Test Default 2',
     },
   },
 

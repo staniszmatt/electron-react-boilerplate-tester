@@ -28,7 +28,10 @@ export default function FormTypes() {
             onSubmit={() => {
               dispatch(formData());
             }}
-            props={value.textAreaData}
+            // Since I want to pass default strings to form fields, we need to call out the
+            // initial key values so we don't fail validation testing after submit is clicked.
+            // If no default is required, then key value isn't needed.
+            initialValues={value.textAreaData}
           />
         </div>
       </div>

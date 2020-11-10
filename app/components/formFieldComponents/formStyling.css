@@ -29,3 +29,23 @@
   font-size: 16px;
   color: red;
 }
+
+.inputFieldContainer {
+  margin-top: 10px;
+}
+
+.inputFieldContainer > label {
+  margin: 5px;
+  white-space: nowrap;
+}
+
+.inputFieldContainer > input {
+  width: 350px;
+}
+
+#errorTag {
+  font-size: 18px;
+  color: red;
+  margin-top: 5px;
+  margin-bottom: unset;
+}
