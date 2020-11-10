@@ -10,6 +10,11 @@ const formTypesSlice = createSlice({
       textAreaValue1: 'Test Default 1',
       textAreaValue2: 'Test Default 2',
     },
+    inputFieldState: {
+      input1: '',
+      input2: '',
+      input3: '',
+    },
   },
 
   // Setup reducer state updates, storeTextArea is the example of passed action string
@@ -18,6 +23,9 @@ const formTypesSlice = createSlice({
       // Setup State Changes
       state.textAreaData.textAreaValue1 = action.payload.textAreaValue1;
       state.textAreaData.textAreaValue2 = action.payload.textAreaValue2;
+      state.inputFieldState.input1 = action.payload.input1;
+      state.inputFieldState.input2 = action.payload.input2;
+      state.inputFieldState.input3 = action.payload.input3;
     },
   },
 });
