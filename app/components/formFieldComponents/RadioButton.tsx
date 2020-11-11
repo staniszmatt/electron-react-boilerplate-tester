@@ -31,7 +31,7 @@ export default function FormField(props: Props) {
       <label htmlFor={name}>{label}</label>
       <input
         {...input}
-        type={type || 'text'}
+        type="radio"
         checked={checkedValue}
         defaultValue={defaultValue}
         disabled={disabled}

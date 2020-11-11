@@ -6,6 +6,7 @@ import InputField from '../../../components/formFieldComponents/InputField';
 import DropDown from '../../../components/formFieldComponents/DropDown';
 import RadioButtonOption1 from './RadioButtonOption1';
 import RadioButtonOption2 from './RadioButtonOption2';
+import RadioButton from '../../../components/formFieldComponents/RadioButton';
 import styles from './FormFieldsForm.css';
 
 // Need to include the interface to fix TypeScript errors here but needed to disable

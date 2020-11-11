@@ -99,7 +99,7 @@ export default function FormYesNo(props: Props) {
                 name={props.input.name}
                 component={RadioButton}
                 type="radio"
-                value="Choice 1"
+                value="Multi 1"
                 checkedValue={radioState.radio1}
                 onChange={checkedRadioButton}
               />
@@ -112,7 +112,7 @@ export default function FormYesNo(props: Props) {
                 name={props.input.name}
                 component={RadioButton}
                 type="radio"
-                value="Choice 2"
+                value="Multi 2"
                 checkedValue={radioState.radio2}
                 onChange={checkedRadioButton}
               />
@@ -125,7 +125,7 @@ export default function FormYesNo(props: Props) {
                 name={props.input.name}
                 component={RadioButton}
                 type="radio"
-                value="Choice 3"
+                value="Multi 3"
                 checkedValue={radioState.radio3}
                 onChange={checkedRadioButton}
               />
