@@ -17,6 +17,16 @@ const formTypesSlice = createSlice({
       input2: '',
       input3: '',
     },
+    // Default option menu field state
+    dropDownState: {
+      optionMenu1: '',
+      optionMenu2: '',
+    },
+    // Default Radio Button field state
+    radioButtonState: {
+      radioButtonMenu1: '',
+      radioButtonMenu2: '',
+    },
   },
 
   // Setup reducer state updates, storeTextArea is the example of passed action string
@@ -25,10 +35,16 @@ const formTypesSlice = createSlice({
       // Setup State Changes
       state.textAreaData.textAreaValue1 = action.payload.textAreaValue1;
       state.textAreaData.textAreaValue2 = action.payload.textAreaValue2;
-      // Added Input Form Field data on submit
+      // Adding Input Form Field data on submit
       state.inputFieldState.input1 = action.payload.input1;
       state.inputFieldState.input2 = action.payload.input2;
       state.inputFieldState.input3 = action.payload.input3;
+      // Adding Drop-Down Field data on submit
+      state.dropDownState.optionMenu1 = action.payload.optionMenu1;
+      state.dropDownState.optionMenu2 = action.payload.optionMenu2;
+      // Adding Radio Button Field data on submit
+      state.radioButtonState.radioButtonMenu1 = action.payload.radioButtonMenu1;
+      state.radioButtonState.radioButtonMenu2 = action.payload.radioButtonMenu2;
     },
   },
 });

@@ -1,15 +1,15 @@
 /* eslint-disable react/jsx-props-no-spreading */
 /* eslint-disable @typescript-eslint/no-explicit-any */
 import React from 'react';
-import styles from './formInput.css';
+import styles from './formStyling.css';
 
 interface Props {
   checkedValue: boolean;
   defaultValue: string;
   disabled: boolean;
   input: string;
-  // TypeScript: Using data as an unknown Object list so used Record<string, unknown>;
-  data: Record<string, unknown>;
+  // TypeScript: Using data as an any Object list so used Record<string, any>;
+  data: Record<string, any>;
   label: string;
   type: string;
   name: string;
@@ -34,13 +34,17 @@ export default function FormDropDown(props: Props): JSX.Element {
   const renderOptions = (option: string) => {
     return (
       <option key={option} value={option}>
+        {/**
+         * This {option} is to create a blank spot to start the options list.
+         * Remove this if you want the first option to be default.
+         */}
         {option}
       </option>
     );
   };
 
   return (
-    <div className={styles['form-container']}>
+    <div className={styles.dropDownContainer}>
       <label htmlFor={name}>{label}</label>
       <select
         type={type || 'select'}

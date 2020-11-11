@@ -18,12 +18,18 @@ export default function FormTypes() {
   // Setting state key names with the values.
   const { textAreaValue1, textAreaValue2 } = formState.textAreaData;
   const { input1, input2, input3 } = formState.inputFieldState;
+  const { optionMenu1, optionMenu2 } = formState.dropDownState;
+  const { radioButtonMenu1, radioButtonMenu2 } = formState.radioButtonState;
   // Just want to display empty if nothing is set yet for Form Value State.
   const textBox1String = emptyStringCheck(textAreaValue1);
   const textBox2String = emptyStringCheck(textAreaValue2);
   const input1String = emptyStringCheck(input1);
   const input2String = emptyStringCheck(input2);
   const input3String = emptyStringCheck(input3);
+  const optionMenu1String = emptyStringCheck(optionMenu1);
+  const optionMenu2String = emptyStringCheck(optionMenu2);
+  const radioButtonMenu1String = emptyStringCheck(radioButtonMenu1);
+  const radioButtonMenu2String = emptyStringCheck(radioButtonMenu2);
 
   return (
     <div className={styles.formTypesContainer} data-tid="backButton">
@@ -67,6 +73,24 @@ export default function FormTypes() {
           <div>
             <div>Submitted Input3 Field</div>
             <div>{input3String}</div>
+          </div>
+          {/** Drop-Down Field */}
+          <div>
+            <div>Submitted Drop-Down Menu 1</div>
+            <div>{optionMenu1String}</div>
+          </div>
+          <div>
+            <div>Submitted Drop-Down Menu 2</div>
+            <div>{optionMenu2String}</div>
+          </div>
+          {/** Radio Button Field */}
+          <div>
+            <div>Submitted Radio Button Menu 1</div>
+            <div>{radioButtonMenu1String}</div>
+          </div>
+          <div>
+            <div>Submitted Radio Button Menu 2</div>
+            <div>{radioButtonMenu2String}</div>
           </div>
         </div>
       </div>

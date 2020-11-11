@@ -3,6 +3,9 @@ import React from 'react';
 import { Field, reduxForm, InjectedFormProps } from 'redux-form';
 import FormTextArea from '../../../components/formFieldComponents/TextArea';
 import InputField from '../../../components/formFieldComponents/InputField';
+import DropDown from '../../../components/formFieldComponents/DropDown';
+import RadioButtonOption1 from './RadioButtonOption1';
+import RadioButtonOption2 from './RadioButtonOption2';
 import styles from './FormFieldsForm.css';
 
 // Need to include the interface to fix TypeScript errors here but needed to disable
@@ -24,6 +27,15 @@ const FormFieldsForm = (
 ) => {
   const { handleSubmit, onSubmit } = formProps;
   const { textAreaValue1, textAreaValue2 } = formProps.initialValues;
+  // Created List of drop-down options for drop-down field component
+  const dropDownOption = [
+    'Option 1',
+    'Option 2',
+    'Option 3',
+    'Option 4',
+    'Option 5',
+  ];
+  const dropDownChoice = ['Choice 1', 'Choice 2', 'Choice 3', 'Choice 4'];
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.formContainer}>
@@ -81,6 +93,42 @@ const FormFieldsForm = (
             type="text"
           />
         </div>
+        {/** Drop-Down Field */}
+        <div>
+          <Field
+            label="Option Menu:"
+            name="optionMenu1"
+            component={DropDown}
+            type="select"
+            data={dropDownOption}
+          />
+        </div>
+        <div>
+          <Field
+            label="Option Menu:"
+            name="optionMenu2"
+            component={DropDown}
+            type="select"
+            data={dropDownChoice}
+          />
+        </div>
+        {/** Radio Button Field */}
+        <div>
+          <Field
+            label="Radio Button Option 1:"
+            name="radioButtonMenu1"
+            component={RadioButtonOption1}
+            type="radio"
+          />
+        </div>
+        <div>
+          <Field
+            label="Radio Button Option 2:"
+            name="radioButtonMenu2"
+            component={RadioButtonOption2}
+            type="radio"
+          />
+        </div>
         {/** Submit Button */}
         <div>
           <div>
@@ -101,14 +149,22 @@ interface Values {
   input1: string;
   input2: number;
   input3: string;
+  optionMenu1: string;
+  optionMenu2: string;
 }
 
 function validate(values: Values): any {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const errors: any = {};
-  const { textAreaValue1, textAreaValue2, input1, input2, input3 } = values;
-
-  console.log('validation values', values);
+  const {
+    textAreaValue1,
+    textAreaValue2,
+    input1,
+    input2,
+    input3,
+    optionMenu1,
+    optionMenu2,
+  } = values;
 
   // Just an example of error checking that can be done.
   // These checks check for string length as a character limit, this one limits to 20 char.
@@ -152,6 +208,14 @@ function validate(values: Values): any {
       errors.input3 = `Only allowed 10 Char, over by ${input3.length - 10}`;
     }
   }
+  // Option Menu, verify a choice has been made.
+  if (!optionMenu1) {
+    errors.optionMenu1 = 'Please Make a choice.';
+  }
+  if (!optionMenu2) {
+    errors.optionMenu2 = 'Please Make a choice.';
+  }
+
   // Returns the error if any that then is attached to the <p> element
   // of the form field component.
   return errors;

@@ -1,0 +1,30 @@
+.radioButtonOptionsContainer {
+  margin-top: 10px;
+}
+
+.radioButtonOptionsContainer > div > label {
+  margin: 5px;
+  white-space: nowrap;
+}
+
+/* .radioButtonOptionsContainer > div > div {
+  margin-top: 5px;
+  display: flex;
+  flex-wrap: wrap;
+} */
+
+.radioButtonOptionsContainer > div > div > div {
+  display: flex;
+}
+
+.radioButtonOptionsContainer > div > div > div > label {
+  display: flex;
+  margin: auto;
+}
+
+#errorTag {
+  font-size: 18px;
+  color: red;
+  margin-top: 5px;
+  margin-bottom: unset;
+}

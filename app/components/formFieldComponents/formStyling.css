@@ -34,13 +34,17 @@
   margin-top: 10px;
 }
 
-.inputFieldContainer > label {
-  margin: 5px;
-  white-space: nowrap;
-}
-
 .inputFieldContainer > input {
   width: 350px;
+}
+
+.dropDownContainer {
+  margin-top: 10px;
+}
+
+.dropDownContainer > label {
+  margin: 5px;
+  white-space: nowrap;
 }
 
 #errorTag {
