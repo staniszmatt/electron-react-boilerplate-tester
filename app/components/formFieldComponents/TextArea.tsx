@@ -66,11 +66,12 @@ export default function FormTextArea(propsTextArea: PropsTextArea) {
           rows={rows}
         />
       </div>
-      {/** The {error && <someElement>} is a boolean that Hides or displays the elements inside the brackets.
-       * This is so error tag is only displayed when there is an error.
+      {/** The {touched && error && <someElement>} is a boolean that Hides or displays the elements inside the brackets.
+       * This is so error tag is only displayed when there is an error and has been touched.
+       * It can also only error if submitted without having added an input.
        * This helped me with better control with styling issues with spacing under text area.
        */}
-      {touched && error && <p className="red-text darken-2">{error}</p>}
+      {touched && error && <p id={styles.errorTag}>{error}</p>}
     </div>
   );
 }

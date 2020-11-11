@@ -6,10 +6,12 @@ import { AppThunk, RootState } from '../../store';
 const formTypesSlice = createSlice({
   name: 'formTypes',
   initialState: {
+    // Default textarea form field state
     textAreaData: {
       textAreaValue1: 'Test Default 1',
       textAreaValue2: 'Test Default 2',
     },
+    // Default input form field state
     inputFieldState: {
       input1: '',
       input2: '',
@@ -23,6 +25,7 @@ const formTypesSlice = createSlice({
       // Setup State Changes
       state.textAreaData.textAreaValue1 = action.payload.textAreaValue1;
       state.textAreaData.textAreaValue2 = action.payload.textAreaValue2;
+      // Added Input Form Field data on submit
       state.inputFieldState.input1 = action.payload.input1;
       state.inputFieldState.input2 = action.payload.input2;
       state.inputFieldState.input3 = action.payload.input3;
