@@ -25,6 +25,9 @@ export default function FormField(props: Props) {
 
   return (
     <div className={styles.radioButtonContainer}>
+      {/**
+       * The htmlFor is required to separate grouped radio buttons
+       */}
       <label htmlFor={name}>{label}</label>
       <input
         {...input}

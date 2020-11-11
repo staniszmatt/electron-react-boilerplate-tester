@@ -13,18 +13,18 @@ const formTypesSlice = createSlice({
     },
     // Default input form field state
     inputFieldState: {
-      input1: '',
+      input1: 'DEFAULT 1',
       input2: '',
-      input3: '',
+      input3: 'Default 2',
     },
     // Default option menu field state
     dropDownState: {
-      optionMenu1: '',
+      optionMenu1: 'Option 2',
       optionMenu2: '',
     },
     // Default Radio Button field state
     radioButtonState: {
-      radioButtonMenu1: '',
+      radioButtonMenu1: 'Choice 3',
       radioButtonMenu2: '',
     },
   },

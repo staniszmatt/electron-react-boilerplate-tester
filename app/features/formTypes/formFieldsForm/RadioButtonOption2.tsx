@@ -9,8 +9,8 @@ import styles from './RadioButtonOption.css';
 interface Props {
   // Commented options out, will be used for later when setting up default values from DB.
   // checkedValue: boolean;
-  // defaultValue: string;
   // disabled: boolean;
+  // defaultValue: string;
   input: { name: string };
   label: string;
   type: string;

@@ -17,6 +17,10 @@ interface DispatchProps {
   initialValues: {
     textAreaValue1: string;
     textAreaValue2: string;
+    input1: string;
+    input3: string;
+    optionMenu1: string;
+    radioButtonMenu1: string;
   };
 }
 
@@ -26,7 +30,14 @@ const FormFieldsForm = (
   formProps: DispatchProps & InjectedFormProps<FormProps, DispatchProps>
 ) => {
   const { handleSubmit, onSubmit } = formProps;
-  const { textAreaValue1, textAreaValue2 } = formProps.initialValues;
+  const {
+    textAreaValue1,
+    textAreaValue2,
+    input1,
+    input3,
+    optionMenu1,
+    radioButtonMenu1,
+  } = formProps.initialValues;
   // Created List of drop-down options for drop-down field component
   const dropDownOption = [
     'Option 1',
@@ -73,6 +84,7 @@ const FormFieldsForm = (
             type="text"
             // Custom redux-form property to pass to input field component to capitalize all letters.
             toCap="true"
+            defaultValue={input1}
           />
         </div>
         {/** Input Field 2 */}
@@ -91,9 +103,10 @@ const FormFieldsForm = (
             component={InputField}
             name="input3"
             type="text"
+            defaultValue={input3}
           />
         </div>
-        {/** Drop-Down Field */}
+        {/** Drop-Down Field 1 */}
         <div>
           <Field
             label="Option Menu:"
@@ -101,8 +114,10 @@ const FormFieldsForm = (
             component={DropDown}
             type="select"
             data={dropDownOption}
+            defaultValue={optionMenu1}
           />
         </div>
+        {/** Drop-Down Field 2 */}
         <div>
           <Field
             label="Option Menu:"
@@ -112,15 +127,17 @@ const FormFieldsForm = (
             data={dropDownChoice}
           />
         </div>
-        {/** Radio Button Field */}
+        {/** Radio Button Field 1 */}
         <div>
           <Field
             label="Radio Button Option 1:"
             name="radioButtonMenu1"
             component={RadioButtonOption1}
             type="radio"
+            defaultValue={radioButtonMenu1}
           />
         </div>
+        {/** Radio Button Field 2 */}
         <div>
           <Field
             label="Radio Button Option 2:"
@@ -151,6 +168,8 @@ interface Values {
   input3: string;
   optionMenu1: string;
   optionMenu2: string;
+  radioButtonMenu1: string;
+  radioButtonMenu2: string;
 }
 
 function validate(values: Values): any {
@@ -164,6 +183,8 @@ function validate(values: Values): any {
     input3,
     optionMenu1,
     optionMenu2,
+    radioButtonMenu1,
+    radioButtonMenu2,
   } = values;
 
   // Just an example of error checking that can be done.
@@ -208,12 +229,19 @@ function validate(values: Values): any {
       errors.input3 = `Only allowed 10 Char, over by ${input3.length - 10}`;
     }
   }
-  // Option Menu, verify a choice has been made.
+  // Drop-Down Menu, verify a choice has been made.
   if (!optionMenu1) {
     errors.optionMenu1 = 'Please Make a choice.';
   }
   if (!optionMenu2) {
     errors.optionMenu2 = 'Please Make a choice.';
+  }
+  // Radio Button, verify a choice has been made.
+  if (!radioButtonMenu1) {
+    errors.radioButtonMenu1 = 'Please Make a choice.';
+  }
+  if (!radioButtonMenu2) {
+    errors.radioButtonMenu2 = 'Please Make a choice.';
   }
 
   // Returns the error if any that then is attached to the <p> element

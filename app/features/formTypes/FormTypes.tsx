@@ -20,6 +20,13 @@ export default function FormTypes() {
   const { input1, input2, input3 } = formState.inputFieldState;
   const { optionMenu1, optionMenu2 } = formState.dropDownState;
   const { radioButtonMenu1, radioButtonMenu2 } = formState.radioButtonState;
+  // Send Initial Values to Form so we can set default values
+  const initialValueObj = {
+    ...formState.textAreaData,
+    ...formState.inputFieldState,
+    ...formState.dropDownState,
+    ...formState.radioButtonState,
+  };
   // Just want to display empty if nothing is set yet for Form Value State.
   const textBox1String = emptyStringCheck(textAreaValue1);
   const textBox2String = emptyStringCheck(textAreaValue2);
@@ -44,7 +51,7 @@ export default function FormTypes() {
             // Since I want to pass default strings to form fields, we need to call out the
             // initial key values so we don't fail validation testing after submit is clicked.
             // If no default is required, then key value isn't needed.
-            initialValues={formState.textAreaData}
+            initialValues={initialValueObj}
           />
         </div>
       </div>
