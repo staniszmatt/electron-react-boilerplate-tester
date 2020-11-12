@@ -48,9 +48,6 @@ const FormFieldsForm = (
     multiChoice1,
     multiChoice2,
     multiChoice3,
-    multiOption1,
-    multiOption2,
-    multiOption3,
   } = formProps.initialValues;
   // Created List of drop-down options for drop-down field component
   const dropDownOption = [
@@ -77,7 +74,6 @@ const FormFieldsForm = (
             label="Text Area Field 1:"
             component={FormTextArea}
             name="textAreaValue1"
-            type="textarea"
             aria-multiline
             defaultValue={textAreaValue1}
             rows="10"
@@ -89,7 +85,6 @@ const FormFieldsForm = (
             label="Text Area Field 2:"
             component={FormTextArea}
             name="textAreaValue2"
-            type="textarea"
             aria-multiline
             defaultValue={textAreaValue2}
             rows="10"
@@ -101,7 +96,6 @@ const FormFieldsForm = (
             label="Input Field 1 (Cap Lock):"
             component={InputField}
             name="input1"
-            type="text"
             // Custom redux-form property to pass to input field component to capitalize all letters.
             toCap="true"
             defaultValue={input1}
@@ -113,7 +107,6 @@ const FormFieldsForm = (
             label="Input Field 2 (Number Only):"
             component={InputField}
             name="input2"
-            type="text"
           />
         </div>
         {/** Input Field 3 */}
@@ -122,7 +115,6 @@ const FormFieldsForm = (
             label="Input Field 3 (Any String):"
             component={InputField}
             name="input3"
-            type="text"
             defaultValue={input3}
           />
         </div>
@@ -132,7 +124,6 @@ const FormFieldsForm = (
             label="Option Menu:"
             name="optionMenu1"
             component={DropDown}
-            type="select"
             data={dropDownOption}
             defaultValue={optionMenu1}
           />
@@ -143,7 +134,6 @@ const FormFieldsForm = (
             label="Option Menu:"
             name="optionMenu2"
             component={DropDown}
-            type="select"
             data={dropDownChoice}
           />
         </div>
@@ -153,7 +143,6 @@ const FormFieldsForm = (
             label="Radio Button Option 1:"
             name="radioButtonMenu1"
             component={RadioButtonOption1}
-            type="radio"
             defaultValue={radioButtonMenu1}
           />
         </div>
@@ -163,7 +152,6 @@ const FormFieldsForm = (
             label="Radio Button Option 2:"
             name="radioButtonMenu2"
             component={RadioButtonOption2}
-            type="radio"
           />
         </div>
         {/** Check Box Field 1 */}
@@ -172,7 +160,6 @@ const FormFieldsForm = (
             label="Check Box Choices 1:"
             name="checkBoxChoice1"
             component={CheckBoxOptions1}
-            type="checkbox"
             checkedValue={defaultCheckBoxValues}
           />
         </div>

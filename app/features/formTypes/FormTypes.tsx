@@ -12,7 +12,7 @@ function emptyStringCheck(stringToCheck: string) {
     : stringToCheck;
 }
 
-function checkBoxCheck(booleanValue) {
+function checkBoxCheck(booleanValue: boolean) {
   return booleanValue ? 'Checked' : 'Un-Checked';
 }
 
@@ -57,7 +57,6 @@ export default function FormTypes() {
   const multiOp1String = checkBoxCheck(multiOption1);
   const multiOp2String = checkBoxCheck(multiOption2);
   const multiOp3String = checkBoxCheck(multiOption3);
-
 
   return (
     <div className={styles.formTypesContainer} data-tid="backButton">
@@ -120,8 +119,6 @@ export default function FormTypes() {
             <div>Submitted Radio Button Menu 2</div>
             <div>{radioButtonMenu2String}</div>
           </div>
-
-
           {/** Check Box Fields */}
           <div className={styles.formCheckBoxContainer}>
             <div>Default Multi Choice Check Boxes</div>
@@ -139,7 +136,6 @@ export default function FormTypes() {
                 <div>{multiCh3String}</div>
               </div>
             </div>
-
             <div>Multi Choice Option Check Boxes</div>
             <div>
               <div>
@@ -156,8 +152,6 @@ export default function FormTypes() {
               </div>
             </div>
           </div>
-
-
         </div>
       </div>
       {/** Keeping separated to help differentiate between set containers */}

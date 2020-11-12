@@ -9,7 +9,6 @@ interface PropsTextArea {
     name: string;
     value: string;
   };
-  type: string;
   rows: number;
   label: string;
   meta: {
@@ -61,7 +60,6 @@ export default function FormTextArea(propsTextArea: PropsTextArea) {
           {...input}
           value={valueState.inputValue}
           onChange={valueChange}
-          type="textarea"
           disabled={disabled}
           id={propsTextArea.input.name}
           aria-multiline

@@ -100,9 +100,8 @@ export default function FormYesNo(props: Props) {
               <Field
                 name={props.input.name}
                 component={RadioButton}
-                type="radio"
                 value="Choice 1"
-                checkedValue={radioState.radio1}
+                checked={radioState.radio1}
                 onChange={checkedRadioButton}
               />
             </label>
@@ -113,9 +112,8 @@ export default function FormYesNo(props: Props) {
               <Field
                 name={props.input.name}
                 component={RadioButton}
-                type="radio"
                 value="Choice 2"
-                checkedValue={radioState.radio2}
+                checked={radioState.radio2}
                 onChange={checkedRadioButton}
               />
             </label>
@@ -126,9 +124,8 @@ export default function FormYesNo(props: Props) {
               <Field
                 name={props.input.name}
                 component={RadioButton}
-                type="radio"
                 value="Choice 3"
-                checkedValue={radioState.radio3}
+                checked={radioState.radio3}
                 onChange={checkedRadioButton}
               />
             </label>
