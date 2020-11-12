@@ -4,8 +4,7 @@ import React from 'react';
 import styles from './formStyling.css';
 
 interface Props {
-  checkedValue: boolean;
-  defaultValue: string;
+  value: string;
   disabled: boolean;
   input: string;
   // TypeScript: Using data as an any Object list so used Record<string, any>;
@@ -21,8 +20,7 @@ interface Props {
 
 export default function FormDropDown(props: Props): JSX.Element {
   const {
-    checkedValue,
-    defaultValue,
+    value,
     input,
     data,
     name,
@@ -34,7 +32,8 @@ export default function FormDropDown(props: Props): JSX.Element {
     return (
       <option key={option} value={option}>
         {/**
-         * This {option} is to create a blank spot to start the options list.
+         * This {option} is to create a blank spot to start the options list,
+         * then adds the array of options.
          * Remove this if you want the first option to be default.
          */}
         {option}
@@ -45,14 +44,8 @@ export default function FormDropDown(props: Props): JSX.Element {
   return (
     <div className={styles.dropDownContainer}>
       <label htmlFor={name}>{label}</label>
-      <select
-        type="select"
-        checked={checkedValue}
-        defaultValue={defaultValue}
-        id={name}
-        {...input}
-      >
-        <option key="blankOption">{defaultValue}</option>
+      <select value={value} id={name} {...input}>
+        <option key="blankOption">{value}</option>
         {data.map(renderOptions)}
       </select>
       {/** The {touched && error && <someElement>} is a boolean that Hides or displays the elements inside the brackets.

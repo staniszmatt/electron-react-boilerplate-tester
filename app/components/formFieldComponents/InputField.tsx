@@ -3,7 +3,6 @@ import React, { useState } from 'react';
 import styles from './formStyling.css';
 
 interface InputProps {
-  checkedValue: boolean;
   toCap: boolean;
   defaultValue: string;
   disabled: boolean;
@@ -24,7 +23,6 @@ interface ValueState {
 
 export default function FormField(inputProps: InputProps) {
   const {
-    checkedValue,
     toCap,
     defaultValue,
     disabled,
@@ -33,8 +31,15 @@ export default function FormField(inputProps: InputProps) {
     label,
     meta: { error, touched },
   } = inputProps;
+  // IF a default value isn't passed, set initialState to empty string.
+  // This helps resolve error where state change is through redux-form rather than
+  // inside this component.
+  let initialDefaultValue = defaultValue;
+  if (!defaultValue) {
+    initialDefaultValue = '';
+  }
   const [valueState, setValueState] = useState<ValueState>({
-    inputValue: defaultValue,
+    inputValue: initialDefaultValue,
   });
 
   const valueChange = (event: { currentTarget: { value: string } }) => {
@@ -64,7 +69,6 @@ export default function FormField(inputProps: InputProps) {
         {...input}
         onChange={valueChange}
         type="text"
-        checked={checkedValue}
         value={valueState.inputValue}
         disabled={disabled}
         id={name}

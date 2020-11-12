@@ -19,6 +19,9 @@ function checkBoxCheck(booleanValue: boolean) {
 export default function FormTypes() {
   const dispatch = useDispatch();
   const formState = useSelector(formTypeState);
+  const submitFormTypes = () => {
+    dispatch(formData());
+  };
   // Setting state key names with the values.
   const { textAreaValue1, textAreaValue2 } = formState.textAreaData;
   const { input1, input2, input3 } = formState.inputFieldState;
@@ -65,9 +68,7 @@ export default function FormTypes() {
         <div>Form Field Type Examples:</div>
         <div>
           <FormFieldForm
-            onSubmit={() => {
-              dispatch(formData());
-            }}
+            onSubmit={submitFormTypes}
             // Since I want to pass default strings to form fields, we need to call out the
             // initial key values so we don't fail validation testing after submit is clicked.
             // If no default is required, then key value isn't needed.

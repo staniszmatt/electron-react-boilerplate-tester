@@ -125,7 +125,7 @@ const FormFieldsForm = (
             name="optionMenu1"
             component={DropDown}
             data={dropDownOption}
-            defaultValue={optionMenu1}
+            value={optionMenu1}
           />
         </div>
         {/** Drop-Down Field 2 */}

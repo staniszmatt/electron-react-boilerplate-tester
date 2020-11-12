@@ -196,7 +196,7 @@ export default merge(baseConfig, {
   },
   resolve: {
     alias: {
-      'react-dom': '@hot-loader/react-dom',
+      'react-dom': 'react-dom',
     },
   },
   plugins: [
