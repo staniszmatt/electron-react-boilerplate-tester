@@ -59,3 +59,29 @@
   display: flex;
   flex-flow: column;
 }
+
+.formCheckBoxContainer {
+  font-size: unset;
+  border: unset;
+}
+
+.formCheckBoxContainer > div:nth-child(even) {
+  border: 1px solid white;
+  font-size: 12px;
+  margin: 10px;
+  padding: 5px 10px;
+}
+
+.formCheckBoxContainer > div:nth-child(odd) {
+  padding-right: 10px;
+  white-space: nowrap;
+  margin: 9px 0;
+}
+
+.formCheckBoxContainer > div > div {
+  display: flex;
+}
+
+.formCheckBoxContainer > div > div > div:first-child {
+  padding-right: 10px;
+}

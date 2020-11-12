@@ -1,17 +1,17 @@
-.radioButtonOptionsContainer {
+.buttonBoxContainer {
   margin-top: 10px;
 }
 
-.radioButtonOptionsContainer > div > label {
+.buttonBoxContainer > div > label {
   margin: 5px;
   white-space: nowrap;
 }
 
-.radioButtonOptionsContainer > div > div > div {
+.buttonBoxContainer > div > div > div {
   display: flex;
 }
 
-.radioButtonOptionsContainer > div > div > div > label {
+.buttonBoxContainer > div > div > div > label {
   display: flex;
   margin: auto;
 }

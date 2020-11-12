@@ -27,7 +27,6 @@ export default function FormDropDown(props: Props): JSX.Element {
     data,
     name,
     label,
-    type = 'text',
     meta: { error, touched },
   } = props;
 
@@ -47,7 +46,7 @@ export default function FormDropDown(props: Props): JSX.Element {
     <div className={styles.dropDownContainer}>
       <label htmlFor={name}>{label}</label>
       <select
-        type={type || 'select'}
+        type="select"
         checked={checkedValue}
         defaultValue={defaultValue}
         id={name}

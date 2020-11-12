@@ -12,6 +12,10 @@ function emptyStringCheck(stringToCheck: string) {
     : stringToCheck;
 }
 
+function checkBoxCheck(booleanValue) {
+  return booleanValue ? 'Checked' : 'Un-Checked';
+}
+
 export default function FormTypes() {
   const dispatch = useDispatch();
   const formState = useSelector(formTypeState);
@@ -20,12 +24,21 @@ export default function FormTypes() {
   const { input1, input2, input3 } = formState.inputFieldState;
   const { optionMenu1, optionMenu2 } = formState.dropDownState;
   const { radioButtonMenu1, radioButtonMenu2 } = formState.radioButtonState;
-  // Send Initial Values to Form so we can set default values
+  const {
+    multiChoice1,
+    multiChoice2,
+    multiChoice3,
+    multiOption1,
+    multiOption2,
+    multiOption3,
+  } = formState.checkBoxState;
+  // Send Initial Values to Form so we can set default values using spread operator
   const initialValueObj = {
     ...formState.textAreaData,
     ...formState.inputFieldState,
     ...formState.dropDownState,
     ...formState.radioButtonState,
+    ...formState.checkBoxState,
   };
   // Just want to display empty if nothing is set yet for Form Value State.
   const textBox1String = emptyStringCheck(textAreaValue1);
@@ -37,6 +50,14 @@ export default function FormTypes() {
   const optionMenu2String = emptyStringCheck(optionMenu2);
   const radioButtonMenu1String = emptyStringCheck(radioButtonMenu1);
   const radioButtonMenu2String = emptyStringCheck(radioButtonMenu2);
+  // Check Box display setup
+  const multiCh1String = checkBoxCheck(multiChoice1);
+  const multiCh2String = checkBoxCheck(multiChoice2);
+  const multiCh3String = checkBoxCheck(multiChoice3);
+  const multiOp1String = checkBoxCheck(multiOption1);
+  const multiOp2String = checkBoxCheck(multiOption2);
+  const multiOp3String = checkBoxCheck(multiOption3);
+
 
   return (
     <div className={styles.formTypesContainer} data-tid="backButton">
@@ -81,7 +102,7 @@ export default function FormTypes() {
             <div>Submitted Input3 Field</div>
             <div>{input3String}</div>
           </div>
-          {/** Drop-Down Field */}
+          {/** Drop-Down Fields */}
           <div>
             <div>Submitted Drop-Down Menu 1</div>
             <div>{optionMenu1String}</div>
@@ -90,7 +111,7 @@ export default function FormTypes() {
             <div>Submitted Drop-Down Menu 2</div>
             <div>{optionMenu2String}</div>
           </div>
-          {/** Radio Button Field */}
+          {/** Radio Button Fields */}
           <div>
             <div>Submitted Radio Button Menu 1</div>
             <div>{radioButtonMenu1String}</div>
@@ -99,6 +120,44 @@ export default function FormTypes() {
             <div>Submitted Radio Button Menu 2</div>
             <div>{radioButtonMenu2String}</div>
           </div>
+
+
+          {/** Check Box Fields */}
+          <div className={styles.formCheckBoxContainer}>
+            <div>Default Multi Choice Check Boxes</div>
+            <div>
+              <div>
+                <div>Multi Choice Box 1:</div>
+                <div>{multiCh1String}</div>
+              </div>
+              <div>
+                <div>Multi Choice Box 2:</div>
+                <div>{multiCh2String}</div>
+              </div>
+              <div>
+                <div>Multi Choice Box 3:</div>
+                <div>{multiCh3String}</div>
+              </div>
+            </div>
+
+            <div>Multi Choice Option Check Boxes</div>
+            <div>
+              <div>
+                <div>Multi Option Box 1:</div>
+                <div>{multiOp1String}</div>
+              </div>
+              <div>
+                <div>Multi Option Box 2:</div>
+                <div>{multiOp2String}</div>
+              </div>
+              <div>
+                <div>Multi Option Box 3:</div>
+                <div>{multiOp3String}</div>
+              </div>
+            </div>
+          </div>
+
+
         </div>
       </div>
       {/** Keeping separated to help differentiate between set containers */}

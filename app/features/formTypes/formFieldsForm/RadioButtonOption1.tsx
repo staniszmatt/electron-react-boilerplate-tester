@@ -5,7 +5,7 @@
 import React, { useState } from 'react';
 import { Field } from 'redux-form';
 import RadioButton from '../../../components/formFieldComponents/RadioButton';
-import styles from './RadioButtonOption.css';
+import styles from './CheckRadioStyling.css';
 
 interface Props {
   // Commented options out, will be used for later when setting up default values from DB.
@@ -36,6 +36,8 @@ export default function FormYesNo(props: Props) {
   } = props;
 
   // Setup useState with TypeScript interface "ValueState"
+  // NOTE: The form state can be modified instead but will cause the form to reload ever
+  // time the input changes, so using useState instead.
   const [radioState, setRadioState] = useState<RadioState>({
     radio1: false,
     radio2: false,
@@ -88,7 +90,7 @@ export default function FormYesNo(props: Props) {
   };
 
   return (
-    <div className={styles.radioButtonOptionsContainer}>
+    <div className={styles.buttonBoxContainer}>
       <div>
         <label htmlFor={name}>{label}</label>
         <div>

@@ -3,8 +3,7 @@ import React from 'react';
 import styles from './formStyling.css';
 
 interface Props {
-  checkedValue: boolean;
-  defaultValue: string;
+  checked: boolean;
   disabled: boolean;
   input: string;
   label: string;
@@ -13,7 +12,7 @@ interface Props {
 }
 
 export default function FormField(props: Props) {
-  const { checkedValue, defaultValue, disabled, input, name, label } = props;
+  const { checked, disabled, input, name, label } = props;
 
   return (
     <div className={styles.radioButtonContainer}>
@@ -23,9 +22,8 @@ export default function FormField(props: Props) {
       <label htmlFor={name}>{label}</label>
       <input
         {...input}
-        type="radio"
-        checked={checkedValue}
-        defaultValue={defaultValue}
+        type="checkbox"
+        checked={checked}
         disabled={disabled}
         id={name}
       />

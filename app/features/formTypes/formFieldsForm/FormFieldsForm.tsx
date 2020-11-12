@@ -6,7 +6,8 @@ import InputField from '../../../components/formFieldComponents/InputField';
 import DropDown from '../../../components/formFieldComponents/DropDown';
 import RadioButtonOption1 from './RadioButtonOption1';
 import RadioButtonOption2 from './RadioButtonOption2';
-import RadioButton from '../../../components/formFieldComponents/RadioButton';
+import CheckBoxOptions1 from './CheckBoxOptions1';
+import CheckBoxOptions2 from './CheckBoxOptions2';
 import styles from './FormFieldsForm.css';
 
 // Need to include the interface to fix TypeScript errors here but needed to disable
@@ -22,6 +23,12 @@ interface DispatchProps {
     input3: string;
     optionMenu1: string;
     radioButtonMenu1: string;
+    multiChoice1: boolean;
+    multiChoice2: boolean;
+    multiChoice3: boolean;
+    multiOption1: boolean;
+    multiOption2: boolean;
+    multiOption3: boolean;
   };
 }
 
@@ -38,6 +45,12 @@ const FormFieldsForm = (
     input3,
     optionMenu1,
     radioButtonMenu1,
+    multiChoice1,
+    multiChoice2,
+    multiChoice3,
+    multiOption1,
+    multiOption2,
+    multiOption3,
   } = formProps.initialValues;
   // Created List of drop-down options for drop-down field component
   const dropDownOption = [
@@ -48,6 +61,12 @@ const FormFieldsForm = (
     'Option 5',
   ];
   const dropDownChoice = ['Choice 1', 'Choice 2', 'Choice 3', 'Choice 4'];
+  // Setup Check Box Default Values
+  const defaultCheckBoxValues = {
+    multiChoice1,
+    multiChoice2,
+    multiChoice3,
+  };
 
   return (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.formContainer}>
@@ -145,6 +164,24 @@ const FormFieldsForm = (
             name="radioButtonMenu2"
             component={RadioButtonOption2}
             type="radio"
+          />
+        </div>
+        {/** Check Box Field 1 */}
+        <div>
+          <Field
+            label="Check Box Choices 1:"
+            name="checkBoxChoice1"
+            component={CheckBoxOptions1}
+            type="checkbox"
+            checkedValue={defaultCheckBoxValues}
+          />
+        </div>
+        <div>
+          <Field
+            label="Check Box Choices 2:"
+            name="checkBoxChoice2"
+            component={CheckBoxOptions2}
+            checkedValue={defaultCheckBoxValues}
           />
         </div>
         {/** Submit Button */}

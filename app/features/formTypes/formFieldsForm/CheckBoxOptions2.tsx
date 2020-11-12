@@ -1,19 +1,14 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 /* eslint-disable react/destructuring-assignment */
 /* eslint-disable jsx-a11y/label-has-associated-control */
 /* eslint-disable react/jsx-props-no-spreading */
 import React from 'react';
 import { Field } from 'redux-form';
-import RadioButton from '../../../components/formFieldComponents/RadioButton';
+import CheckBox from '../../../components/formFieldComponents/CheckBox';
 import styles from './CheckRadioStyling.css';
 
 interface Props {
-  // Commented options out, will be used for later when setting up default values from DB.
-  // checkedValue: boolean;
-  // disabled: boolean;
-  // defaultValue: string;
-  input: { name: string };
   label: string;
-  type: string;
   name: string;
   meta: {
     error: string;
@@ -25,9 +20,9 @@ export default function FormYesNo(props: Props) {
   const {
     name,
     label,
-    type,
     meta: { error, touched },
   } = props;
+
   return (
     <div className={styles.buttonBoxContainer}>
       <div>
@@ -35,35 +30,20 @@ export default function FormYesNo(props: Props) {
         <div>
           <div>
             <label>
-              Option 1
-              <Field
-                name={props.input.name}
-                component={RadioButton}
-                type="radio"
-                value="Option 1"
-              />
+              Multi Option 1
+              <Field name="multiOption1" component={CheckBox} />
             </label>
           </div>
           <div>
             <label>
-              Option 2
-              <Field
-                name={props.input.name}
-                component={RadioButton}
-                type="radio"
-                value="Option 2"
-              />
+              Multi Option 2
+              <Field name="multiOption2" component={CheckBox} />
             </label>
           </div>
           <div>
             <label>
-              Option 3
-              <Field
-                name={props.input.name}
-                component={RadioButton}
-                type="radio"
-                value="Option 3"
-              />
+              Multi Option 3
+              <Field name="multiOption3" component={CheckBox} />
             </label>
           </div>
         </div>

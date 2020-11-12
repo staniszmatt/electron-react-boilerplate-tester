@@ -27,11 +27,20 @@ const formTypesSlice = createSlice({
       radioButtonMenu1: 'Choice 3',
       radioButtonMenu2: '',
     },
+    checkBoxState: {
+      multiChoice1: true,
+      multiChoice2: true,
+      multiChoice3: true,
+      multiOption1: false,
+      multiOption2: false,
+      multiOption3: false,
+    },
   },
 
   // Setup reducer state updates, storeTextArea is the example of passed action string
   reducers: {
     storeTextArea: (state, action) => {
+      console.log('reducer actions: ', action);
       // Setup State Changes
       state.textAreaData.textAreaValue1 = action.payload.textAreaValue1;
       state.textAreaData.textAreaValue2 = action.payload.textAreaValue2;
@@ -45,6 +54,13 @@ const formTypesSlice = createSlice({
       // Adding Radio Button Field data on submit
       state.radioButtonState.radioButtonMenu1 = action.payload.radioButtonMenu1;
       state.radioButtonState.radioButtonMenu2 = action.payload.radioButtonMenu2;
+      // Adding Check Box Field data on submit
+      state.checkBoxState.multiChoice1 = action.payload.multiChoice1;
+      state.checkBoxState.multiChoice2 = action.payload.multiChoice2;
+      state.checkBoxState.multiChoice3 = action.payload.multiChoice3;
+      state.checkBoxState.multiOption1 = action.payload.multiOption1;
+      state.checkBoxState.multiOption2 = action.payload.multiOption2;
+      state.checkBoxState.multiOption3 = action.payload.multiOption3;
     },
   },
 });
@@ -57,7 +73,7 @@ export const formData = (): AppThunk => {
   return (dispatch, getState) => {
     const state = getState();
     const textAreaString = state.form.formTypes.values;
-
+    console.log('Form Data: ', state);
     dispatch(storeTextArea(textAreaString));
   };
 };
