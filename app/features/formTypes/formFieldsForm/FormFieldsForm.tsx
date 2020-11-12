@@ -195,9 +195,16 @@ interface Values {
   optionMenu2: string;
   radioButtonMenu1: string;
   radioButtonMenu2: string;
+  multiChoice1: boolean;
+  multiChoice2: boolean;
+  multiChoice3: boolean;
+  multiOption1: boolean;
+  multiOption2: boolean;
+  multiOption3: boolean;
 }
 
 function validate(values: Values): any {
+  console.log('Form Validation values: ', values);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const errors: any = {};
   const {
@@ -210,6 +217,12 @@ function validate(values: Values): any {
     optionMenu2,
     radioButtonMenu1,
     radioButtonMenu2,
+    multiChoice1,
+    multiChoice2,
+    multiChoice3,
+    multiOption1,
+    multiOption2,
+    multiOption3,
   } = values;
 
   // Just an example of error checking that can be done.
@@ -267,6 +280,13 @@ function validate(values: Values): any {
   }
   if (!radioButtonMenu2) {
     errors.radioButtonMenu2 = 'Please Make a choice.';
+  }
+  // Check Box, verify at least one box is checked
+  if (!multiChoice1 && !multiChoice2 && !multiChoice3) {
+    errors.checkBoxChoice1 = 'Please make a selection.';
+  }
+  if (!multiOption1 && !multiOption2 && !multiOption3) {
+    errors.checkBoxChoice2 = 'Please make a selection.';
   }
 
   // Returns the error if any that then is attached to the <p> element

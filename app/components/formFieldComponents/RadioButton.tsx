@@ -8,7 +8,6 @@ interface Props {
   disabled: boolean;
   input: string;
   label: string;
-  type: string;
   name: string;
 }
 

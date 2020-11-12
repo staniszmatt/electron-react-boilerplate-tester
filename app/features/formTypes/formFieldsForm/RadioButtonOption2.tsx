@@ -37,6 +37,7 @@ export default function FormYesNo(props: Props) {
               <Field
                 name={props.input.name}
                 component={RadioButton}
+                type="radio"
                 value="Option 1"
               />
             </label>
@@ -47,6 +48,7 @@ export default function FormYesNo(props: Props) {
               <Field
                 name={props.input.name}
                 component={RadioButton}
+                type="radio"
                 value="Option 2"
               />
             </label>
@@ -57,6 +59,7 @@ export default function FormYesNo(props: Props) {
               <Field
                 name={props.input.name}
                 component={RadioButton}
+                type="radio"
                 value="Option 3"
               />
             </label>
