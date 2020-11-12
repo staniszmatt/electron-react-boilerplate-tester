@@ -204,7 +204,6 @@ interface Values {
 }
 
 function validate(values: Values): any {
-  console.log('Form Validation values: ', values);
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const errors: any = {};
   const {
