@@ -1,0 +1,24 @@
+.buttonBoxContainer {
+  margin-top: 10px;
+}
+
+.buttonBoxContainer > div > label {
+  margin: 5px;
+  white-space: nowrap;
+}
+
+.buttonBoxContainer > div > div > div {
+  display: flex;
+}
+
+.buttonBoxContainer > div > div > div > label {
+  display: flex;
+  margin: auto;
+}
+
+#errorTag {
+  font-size: 18px;
+  color: red;
+  margin-top: 5px;
+  margin-bottom: unset;
+}

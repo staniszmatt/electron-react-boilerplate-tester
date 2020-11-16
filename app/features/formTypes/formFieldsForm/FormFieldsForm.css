@@ -1,0 +1,17 @@
+.formContainer {
+  display: flex;
+  text-align: center;
+}
+
+.formContainer > div {
+  width: 100%;
+}
+
+.formContainer > div > div:last-child {
+  margin: 15px 0;
+}
+
+.formContainer > div > div:last-child > div > button {
+  font-size: 18px;
+  color: #2f3cc7;
+}
