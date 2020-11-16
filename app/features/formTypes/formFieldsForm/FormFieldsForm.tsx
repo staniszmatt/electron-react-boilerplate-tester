@@ -23,6 +23,8 @@ interface DispatchProps {
     input3: string;
     optionMenu1: string;
     radioButtonMenu1: string;
+    // Need to set individual fields for check box options since this setup allows all
+    // check boxes to be selected for submitting.
     multiChoice1: boolean;
     multiChoice2: boolean;
     multiChoice3: boolean;

@@ -73,7 +73,9 @@ export default function FormYesNo(props: Props) {
       default:
     }
   };
-  // Initial default check
+  // Initial default check, this assumes that there has to be at least 1 radio button selected.
+  // So once a default is set or a user has selected a radio button, we can ignore the initial
+  // state default set if one exists.
   if (
     defaultValue &&
     !radioState.radio1 &&

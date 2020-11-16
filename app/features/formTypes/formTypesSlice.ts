@@ -17,7 +17,7 @@ const formTypesSlice = createSlice({
       input2: '',
       input3: 'Default 2',
     },
-    // Default option menu field state
+    // Default drop-Down menu field state
     dropDownState: {
       optionMenu1: 'Option 2',
       optionMenu2: '',
@@ -40,7 +40,6 @@ const formTypesSlice = createSlice({
   // Setup reducer state updates, storeTextArea is the example of passed action string
   reducers: {
     storeTextArea: (state, action) => {
-      console.log('reducer actions: ', action);
       // Setup State Changes
       state.textAreaData.textAreaValue1 = action.payload.textAreaValue1;
       state.textAreaData.textAreaValue2 = action.payload.textAreaValue2;
