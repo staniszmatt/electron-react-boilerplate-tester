@@ -1,0 +1,55 @@
+.textareaContainer {
+  width: 100%;
+}
+
+.textareaContainer > div {
+  margin: 5px;
+}
+
+.textareaContainer > div:first-child {
+  text-align: center;
+  font-size: 12pt;
+  font-weight: bold;
+  white-space: pre-wrap;
+  margin: 10px 0;
+}
+
+.textareaContainer > div:nth-child(2) > textarea {
+  width: 98%;
+  vertical-align: top;
+  resize: none;
+  max-height: 120px;
+  box-shadow: inset 0 0 5px #000154;
+  padding: 5px;
+  height: 115px;
+}
+
+.textareaContainer > p {
+  margin: unset;
+  font-size: 16px;
+  color: red;
+}
+
+.inputFieldContainer {
+  margin-top: 10px;
+}
+
+.inputFieldContainer > input {
+  width: 350px;
+}
+
+.dropDownContainer {
+  margin-top: 10px;
+}
+
+.dropDownContainer > label {
+  margin: 5px;
+  white-space: nowrap;
+}
+
+#errorTag {
+  font-size: 18px;
+  color: red;
+  margin-top: 5px;
+  margin-bottom: unset;
+}

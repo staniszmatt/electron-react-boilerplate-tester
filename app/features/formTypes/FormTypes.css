@@ -1,10 +1,87 @@
 .formTypesContainer {
-  height: 100vh;
+  height: 100%;
   display: flex;
+  padding-top: 40px;
+  text-align: center;
 }
 
 .formTypesContainer > div {
-  margin: auto;
   font-size: 50px;
   font-weight: bold;
+  width: 50%;
+}
+
+.formContainer > div {
+  font-size: 18px;
+}
+
+.formCheckBoxContainer > div > div {
+  display: flex;
+}
+
+.formTypesContainer > div:first-child {
+  display: flex;
+  flex-flow: column;
+}
+
+.formFieldSubmittedText > div:first-child {
+  display: flex;
+  text-decoration: underline;
+  margin: 0 auto;
+}
+
+.formCheckBoxContainer {
+  font-size: unset;
+  border: unset;
+}
+
+.formCheckBoxContainer > div:nth-child(even) {
+  border: 1px solid white;
+  font-size: 12px;
+  margin: 10px;
+  padding: 5px 10px;
+}
+
+.formCheckBoxContainer > div:nth-child(odd) {
+  padding-right: 10px;
+  white-space: nowrap;
+  margin: 9px 0;
+}
+
+.formFieldSubmittedText > div > div:first-child {
+  padding-right: 10px;
+  white-space: nowrap;
+  margin: 9px 0;
+}
+
+.formFieldSubmittedText > div > div:last-child {
+  text-align: left;
+  font-size: 12px;
+  padding: 5px 10px;
+  border: 1px solid white;
+  margin: 0 10px;
+  overflow-y: auto;
+  white-space: pre-wrap;
+  max-height: 115px;
+}
+
+.formCheckBoxContainer > div > div > div:first-child {
+  padding-right: 10px;
+}
+
+.formTypesContainer > div:first-child > div:first-child {
+  text-decoration: underline;
+}
+
+.formContainer > div:last-child > form {
+  margin: auto;
+}
+
+.formFieldSubmittedText {
+  color: white;
+  text-align: center;
+  font-size: 18px;
+  height: 100%;
+  display: flex;
+  flex-flow: column;
 }
