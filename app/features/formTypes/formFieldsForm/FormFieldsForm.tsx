@@ -13,25 +13,25 @@ import styles from './FormFieldsForm.css';
 // Need to include the interface to fix TypeScript errors here but needed to disable
 // no-empty-interface since we aren't using any of the types from FormProps.
 // eslint-disable-next-line @typescript-eslint/no-empty-interface
-interface FormProps {}
+interface FormProps {
+  textAreaValue1: string;
+  textAreaValue2: string;
+  input1: string;
+  input2: number;
+  input3: string;
+  optionMenu1: string;
+  optionMenu2: string;
+  radioButtonMenu1: string;
+  radioButtonMenu2: string;
+  multiChoice1: boolean;
+  multiChoice2: boolean;
+  multiChoice3: boolean;
+  multiOption1: boolean;
+  multiOption2: boolean;
+  multiOption3: boolean;
+}
 interface DispatchProps {
   onSubmit: () => void;
-  initialValues: {
-    textAreaValue1: string;
-    textAreaValue2: string;
-    input1: string;
-    input3: string;
-    optionMenu1: string;
-    radioButtonMenu1: string;
-    // Need to set individual fields for check box options since this setup allows all
-    // check boxes to be selected for submitting.
-    multiChoice1: boolean;
-    multiChoice2: boolean;
-    multiChoice3: boolean;
-    multiOption1: boolean;
-    multiOption2: boolean;
-    multiOption3: boolean;
-  };
 }
 
 // TypeScript interface set for formProps to include redux-form TypeScript interface.
@@ -39,7 +39,7 @@ interface DispatchProps {
 const FormFieldsForm = (
   formProps: DispatchProps & InjectedFormProps<FormProps, DispatchProps>
 ) => {
-  const { handleSubmit, onSubmit } = formProps;
+  const { handleSubmit, onSubmit, initialValues } = formProps;
   const {
     textAreaValue1,
     textAreaValue2,
@@ -50,7 +50,7 @@ const FormFieldsForm = (
     multiChoice1,
     multiChoice2,
     multiChoice3,
-  } = formProps.initialValues;
+  } = initialValues;
   // Created List of drop-down options for drop-down field component
   const dropDownOption = [
     'Option 1',
@@ -187,25 +187,7 @@ const FormFieldsForm = (
   );
 };
 
-interface Values {
-  textAreaValue1: string;
-  textAreaValue2: string;
-  input1: string;
-  input2: number;
-  input3: string;
-  optionMenu1: string;
-  optionMenu2: string;
-  radioButtonMenu1: string;
-  radioButtonMenu2: string;
-  multiChoice1: boolean;
-  multiChoice2: boolean;
-  multiChoice3: boolean;
-  multiOption1: boolean;
-  multiOption2: boolean;
-  multiOption3: boolean;
-}
-
-function validate(values: Values): any {
+function validate(values: FormProps) {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const errors: any = {};
   const {

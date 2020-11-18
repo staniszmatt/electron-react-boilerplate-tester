@@ -12,6 +12,7 @@ interface InputProps {
   };
   label: string;
   name: string;
+  rows: number;
   meta: {
     error: string;
     touched: boolean;

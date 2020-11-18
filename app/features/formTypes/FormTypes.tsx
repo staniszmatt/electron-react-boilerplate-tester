@@ -36,7 +36,9 @@ export default function FormTypes() {
     multiOption3,
   } = formState.checkBoxState;
   // Send Initial Values to Form so we can set default values using spread operator
-  const initialValueObj = {
+  // Set to any since we can use any values to set the initialValues of the form component.
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const initialValueObj: any = {
     ...formState.textAreaData,
     ...formState.inputFieldState,
     ...formState.dropDownState,

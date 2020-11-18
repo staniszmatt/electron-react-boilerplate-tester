@@ -9,12 +9,13 @@ import Navbar from './components/Navbar';
 
 // Information on React.lazy setup: https://reactjs.org/docs/code-splitting.html
 // Lazily load routes and code split with webpack
-const LazyCounterPage = React.lazy(() =>
-  import(/* webpackChunkName: "CounterPage" */ './containers/CounterPage')
+const LazyCounterPage = React.lazy(
+  () => import(/* webpackChunkName: "CounterPage" */ './containers/CounterPage')
 );
 
-const LazyFormTypesPage = React.lazy(() =>
-  import(/* webpackChunkName: "FormTypesPage" */ './containers/FormTypesPage')
+const LazyFormTypesPage = React.lazy(
+  // eslint-disable-next-line prettier/prettier
+  () => import(/* webpackChunkName: "FormTypesPage" */ './containers/FormTypesPage')
 );
 
 const CounterPage = (props: Record<string, any>) => (
