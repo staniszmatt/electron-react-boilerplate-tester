@@ -64,7 +64,7 @@ export default function FormTypes() {
   const multiOp3String = checkBoxCheck(multiOption3);
 
   return (
-    <div className={styles.formTypesContainer} data-tid="backButton">
+    <div className={styles.formTypesContainer} data-tid="formTypesPage">
       {/** This is the Form container setup with a header div. */}
       <div className={styles.formContainer}>
         <div>Form Field Type Examples:</div>

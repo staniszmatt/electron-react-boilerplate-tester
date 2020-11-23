@@ -71,7 +71,7 @@ const FormFieldsForm = (
     <form onSubmit={handleSubmit(onSubmit)} className={styles.formContainer}>
       <div>
         {/** Text Area 1 */}
-        <div>
+        <div data-tclass="input">
           <Field
             label="Text Area Field 1:"
             component={FormTextArea}
@@ -82,7 +82,7 @@ const FormFieldsForm = (
           />
         </div>
         {/** Text Area 2 */}
-        <div>
+        <div data-tclass="input">
           <Field
             label="Text Area Field 2:"
             component={FormTextArea}
@@ -93,7 +93,7 @@ const FormFieldsForm = (
           />
         </div>
         {/** Input Field 1 */}
-        <div>
+        <div data-tclass="input">
           <Field
             label="Input Field 1 (Cap Lock):"
             component={InputField}
@@ -104,7 +104,7 @@ const FormFieldsForm = (
           />
         </div>
         {/** Input Field 2 */}
-        <div>
+        <div data-tclass="input">
           <Field
             label="Input Field 2 (Number Only):"
             component={InputField}
@@ -112,7 +112,7 @@ const FormFieldsForm = (
           />
         </div>
         {/** Input Field 3 */}
-        <div>
+        <div data-tclass="input">
           <Field
             label="Input Field 3 (Any String):"
             component={InputField}
@@ -121,7 +121,7 @@ const FormFieldsForm = (
           />
         </div>
         {/** Drop-Down Field 1 */}
-        <div>
+        <div data-tclass="input">
           <Field
             label="Option Menu:"
             name="optionMenu1"
@@ -131,7 +131,7 @@ const FormFieldsForm = (
           />
         </div>
         {/** Drop-Down Field 2 */}
-        <div>
+        <div data-tclass="input">
           <Field
             label="Option Menu:"
             name="optionMenu2"
@@ -140,7 +140,7 @@ const FormFieldsForm = (
           />
         </div>
         {/** Radio Button Field 1 */}
-        <div>
+        <div data-tclass="input">
           <Field
             label="Radio Button Option 1:"
             name="radioButtonMenu1"
@@ -149,7 +149,7 @@ const FormFieldsForm = (
           />
         </div>
         {/** Radio Button Field 2 */}
-        <div>
+        <div data-tclass="input">
           <Field
             label="Radio Button Option 2:"
             name="radioButtonMenu2"
@@ -157,7 +157,7 @@ const FormFieldsForm = (
           />
         </div>
         {/** Check Box Field 1 */}
-        <div>
+        <div data-tclass="input">
           <Field
             label="Check Box Choices 1:"
             name="checkBoxChoice1"
@@ -165,7 +165,7 @@ const FormFieldsForm = (
             checkedValue={defaultCheckBoxValues}
           />
         </div>
-        <div>
+        <div data-tclass="input">
           <Field
             label="Check Box Choices 2:"
             name="checkBoxChoice2"
@@ -176,7 +176,7 @@ const FormFieldsForm = (
         {/** Submit Button */}
         <div>
           <div>
-            <button type="button" onClick={handleSubmit(onSubmit)}>
+            <button type="button" onClick={handleSubmit(onSubmit)} data-tid="formTypesSubmit">
               Submit Form
             </button>
           </div>
