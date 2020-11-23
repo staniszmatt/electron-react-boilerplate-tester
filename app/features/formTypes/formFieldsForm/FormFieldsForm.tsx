@@ -165,6 +165,7 @@ const FormFieldsForm = (
             checkedValue={defaultCheckBoxValues}
           />
         </div>
+        {/** Check Box Field 2 */}
         <div data-tclass="input">
           <Field
             label="Check Box Choices 2:"

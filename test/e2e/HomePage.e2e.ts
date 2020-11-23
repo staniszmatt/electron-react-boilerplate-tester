@@ -7,7 +7,7 @@ const counterSelector = Selector('[data-tid="counter"]');
 const buttonsSelector = Selector('[data-tclass="btn"]');
 const clickToCounterLink = (t) =>
   t.click(Selector('a').withExactText('to Counter'));
-const incrementButton = buttonsSelector.nth(0);
+const incrementButton = df.nth(0);
 const decrementButton = buttonsSelector.nth(1);
 const oddButton = buttonsSelector.nth(2);
 const asyncButton = buttonsSelector.nth(3);
