@@ -176,7 +176,11 @@ const FormFieldsForm = (
         {/** Submit Button */}
         <div>
           <div>
-            <button type="button" onClick={handleSubmit(onSubmit)} data-tid="formTypesSubmit">
+            <button
+              type="button"
+              onClick={handleSubmit(onSubmit)}
+              data-tid="formTypesSubmit"
+            >
               Submit Form
             </button>
           </div>
